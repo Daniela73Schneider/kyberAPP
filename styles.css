@@ -1,96 +1,176 @@
-#desktop {
-  background-color: #ddeeff;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
+ @font-face {
+   font-family: 'ubuntu';
+   src: url('img/font/Ubuntu-Regular.ttf') format('truetype');
+   /* Přidejte další varianty fontu */
+   src: url('img/font/Ubuntu-Bold.ttf') format('truetype');
+   src: url('img/font/Ubuntu-Italic.ttf') format('truetype');
+   src: url('img/font/Ubuntu-Medium.ttf') format('truetype');
+ }
 
-.icon {
-  width: 100px;
-  height: 100px;
-  margin: 20px;
-  cursor: pointer;
-}
+ /*index.page style*/
+ body {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   width: 80%;
+   height: 100dvh;
+   margin: 1% 10%;
+   background-image: url('img/view-tasty-sweet-glazed-donuts.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+ }
 
-.icon img {
-  width: 100%;
-  height: 100%;
-}
+ .kyberMise {
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   width: 80%;
+   margin: 3% 10%;
+   background-color: #ffffffae;
+   padding: 3% 3%;
+   border-radius: 5%;
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
+ header {
+   color: rgb(255, 255, 255);
+   background-color: #361d04a5;
+   text-shadow: 2px 2px 5px #e29e2bc7;
+   border-radius: 70%;
+ }
+
+ * {
+   font-family: 'ubuntu', sans-serif;
+ }
+
+ .goal {
+   color: #d65338;
+   font-size: larger;
+ }
+
+ a.btn {
+   background-color: #63b769;
+   border: 2px;
+   color: white;
+   padding: 15px 32px;
+   text-align: center;
+   text-decoration: none;
+   display: inline-block;
+   font-size: 16px;
+   border-radius: 5%;
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
 
 
-/* Modal styling */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 60px;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
-}
+ footer {
+   background-color: #361d04a5;
+   color: rgb(255, 255, 255);
+   display: grid;
+   justify-items: center;
+   width: 100dvw;
+ }
 
-.modalContent {
-  background-color: #fefefe;
-  margin: 5% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 80%;
-}
 
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
 
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
+ .imgCR {
+   width: 120px;
+ }
 
-/* Tab styling */
-.tab {
-  display: flex;
-  background-color: #f1f1f1;
-  padding: 10px;
-}
+ /*email page style*/
+ .header {
+   display: flex;
 
-.tab button {
-  background-color: inherit;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 10px 20px;
-  transition: background-color 0.3s;
-}
 
-.tab button:hover {
-  background-color: #ddd;
-}
+ }
 
-.tab button.active {
-  background-color: #ccc;
-}
+ #desktop {
+   background-color: #ddeeff;
+   width: 100vw;
+   height: 100vh;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+ }
 
-/* Email content styling */
-.email {
-  display: none;
-  padding: 20px;
-  border-top: none;
-}
+ .icon {
+   width: 100px;
+   height: 100px;
+   margin: 20px;
+   cursor: pointer;
+ }
+
+ .icon img {
+   width: 100%;
+   height: 100%;
+ }
+
+
+
+ /* Modal styling */
+ .modal {
+   display: none;
+   position: fixed;
+   z-index: 1;
+   padding-top: 60px;
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   background-color: rgb(0, 0, 0);
+   background-color: rgba(0, 0, 0, 0.4);
+ }
+
+ .modalContent {
+   background-color: #fefefe;
+   margin: 5% auto;
+   padding: 20px;
+   border: 1px solid #888;
+   width: 80%;
+ }
+
+ .close {
+   color: #aaa;
+   float: right;
+   font-size: 28px;
+   font-weight: bold;
+ }
+
+ .close:hover,
+ .close:focus {
+   color: black;
+   text-decoration: none;
+   cursor: pointer;
+ }
+
+ /* Tab styling */
+ .tab {
+   display: flex;
+   background-color: #f1f1f1;
+   padding: 10px;
+ }
+
+ .tab button {
+   background-color: inherit;
+   border: none;
+   outline: none;
+   cursor: pointer;
+   padding: 10px 20px;
+   transition: background-color 0.3s;
+ }
+
+ .tab button:hover {
+   background-color: #ddd;
+ }
+
+ .tab button.active {
+   background-color: #ccc;
+ }
+
+ /* Email content styling */
+ .email {
+   display: none;
+   padding: 20px;
+   border-top: none;
+ }
