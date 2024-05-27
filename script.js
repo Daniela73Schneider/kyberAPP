@@ -136,11 +136,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   if (newPasswordInput) {
     newPasswordInput.addEventListener('input', function () {
-      checkPasswordStrength(newPasswordInput.value);
+      const isStrong = checkPasswordStrength(newPasswordInput.value);
+      confirmButton.disabled = !isStrong; // Enable button if password is strong
     });
   }
 
-  const resetPasswordForm = document.getElementById('resetPasswordForm');
+  // Reset password form submission
   if (resetPasswordForm) {
     resetPasswordForm.addEventListener('submit', function (event) {
       event.preventDefault();
@@ -157,7 +158,7 @@ function checkPasswordStrength(password) {
   const strengthDisplay = document.getElementById('strength-display');
 
   let strength = 0;
-  if (password.length >= 6 && password.length <= 12) {
+  if (password.length >= 12) {
     strength += 1;
   }
   if (/[a-z]/.test(password)) {
@@ -194,7 +195,74 @@ function checkPasswordStrength(password) {
       strengthDisplay.innerText = 'Very strong';
       strengthbar.value = 100;
       break;
+    case 5:
+      strengthDisplay.innerText = 'Excellent';
+      strengthbar.value = 100;
+      break;
   }
-  // Vrátí true, pokud je heslo dostatečně silné, jinak false
+  // Return true if password is strong enough (at least 4 points)
   return strength >= 5;
 }
+
+//desktop verze - emaila atrezor
+document.addEventListener('DOMContentLoaded', function () {
+  const emailIcon = document.getElementById('emailIcon');
+  const emailModal = document.getElementById('emailModal');
+  const phishingLink = document.getElementById('phishingLink');
+  const phishingInfoModal = document.getElementById('phishingInfoModal');
+  const closeButtons = document.querySelectorAll('.close');
+  const closePhishingInfoButton = document.getElementById('closePhishingInfo');
+
+  // Open email modal
+  emailIcon.addEventListener('click', function () {
+    emailModal.style.display = 'block';
+  });
+
+  // Open phishing info modal
+  phishingLink.addEventListener('click', function (event) {
+    event.preventDefault();
+    emailModal.style.display = 'none';
+    phishingInfoModal.style.display = 'block';
+  });
+
+  // Close modal when clicking on close button
+  closeButtons.forEach((button) => {
+    button.addEventListener('click', function () {
+      button.closest('.modal').style.display = 'none';
+    });
+  });
+
+  // Close phishing info modal and redirect to homepage
+  closePhishingInfoButton.addEventListener('click', function () {
+    phishingInfoModal.style.display = 'none';
+    window.location.href = 'index.html'; // Redirect to homepage
+  });
+
+  // Close modal when clicking outside of it
+  window.addEventListener('click', function (event) {
+    if (event.target == emailModal) {
+      emailModal.style.display = 'none';
+    }
+    if (event.target == phishingInfoModal) {
+      phishingInfoModal.style.display = 'none';
+    }
+  });
+
+  // Close all modals before unloading the page
+  window.addEventListener('beforeunload', function () {
+    emailModal.style.display = 'none';
+    phishingInfoModal.style.display = 'none';
+  });
+
+  // Function to handle tab content
+  window.openMail = function (event, mailName) {
+    const emails = document.querySelectorAll('.email');
+    emails.forEach((email) => (email.style.display = 'none'));
+    const tablinks = document.querySelectorAll('.tablinks');
+    tablinks.forEach(
+      (link) => (link.className = link.className.replace(' active', '')),
+    );
+    document.getElementById(mailName).style.display = 'block';
+    event.currentTarget.className += ' active';
+  };
+});

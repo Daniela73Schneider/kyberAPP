@@ -3,15 +3,70 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Desktop</title>
+    <link rel="stylesheet" href="styles.css" />
   </head>
+  <header>
+    <a href="index.html"><button>Domů</button></a>
+  </header>
   <body>
-    <div>
-      email.html (Stránka pro zjištění způsobu útoku) Scénář, ve kterém děti
-      zjistí, že se kyberpadouch dostal do systému cukrárny prostřednictvím
-      phishingového e-mailu. Možnosti: A) Phishingový e-mail, B) Slabé heslo, C)
-      Neaktualizovaný software. Po výběru možnosti se zobrazí zpětná vazba a
-      možnost vrátit se na hlavní stránku.
+    <div id="desktop">
+      <div class="icon" id="emailIcon">
+        <img src="email_icon.png" alt="Email" />
+      </div>
+      <div class="icon" id="treasureIcon">
+        <img src="treasure_icon.png" alt="Trezor" />
+      </div>
     </div>
+    <div id="emailModal" class="modal">
+      <div class="modalContent">
+        <span class="close">&times;</span>
+        <h2>Inbox</h2>
+        <div class="tab">
+          <button class="tablinks" onclick="openMail(event, 'email1')">
+            Bezpečný email 1
+          </button>
+          <button class="tablinks" onclick="openMail(event, 'email2')">
+            Bezpečný email 2
+          </button>
+          <button class="tablinks" onclick="openMail(event, 'phishingEmail')">
+            Podezřelý email
+          </button>
+        </div>
+        <div class="email" id="email1">
+          <h3>Bezpečný Email 1</h3>
+          <p>Odesílatel: friend@example.com</p>
+          <p>Předmět: Ahoj, jak se máš?</p>
+        </div>
+        <div class="email" id="email2">
+          <h3>Bezpečný Email 2</h3>
+          <p>Odesílatel: company@example.com</p>
+          <p>Předmět: Nabídka naší nové služby</p>
+        </div>
+        <div class="email" id="phishingEmail">
+          <h3>Podezřelý Email</h3>
+          <p>Odesílatel: unknown@phishing.com</p>
+          <p>Předmět: Urgentní - Zkontrolujte svou bezpečnost!</p>
+          <p>
+            Text: Klikněte na následující odkaz a aktualizujte své heslo:
+            <a href="#" id="phishingLink">Aktualizovat heslo</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div id="phishingInfoModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Phishing Attack Detected</h2>
+        <p>
+          Kyberzločinec se dostal do počítače prostřednictvím phishingového
+          emailu. Nikdy neklikejte na podezřelé odkazy a nezadávejte své údaje
+          na neznámých webových stránkách.
+        </p>
+        <button id="closePhishingInfo">Zavřít</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
   </body>
+  <footer><h1>Cukrárna Sladké Tajemství</h1></footer>
 </html>
