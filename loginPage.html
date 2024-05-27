@@ -7,10 +7,10 @@
     <title>Document</title>
   </head>
   <header>
-    <a href="index.html"><button>Domů</button></a>
+    <a class="homeBtn" href="index.html"><button>Domů</button></a>
   </header>
   <body>
-    <div>
+    <div class="loginPage">
       <div class="container">
         <h1>Přihlášení</h1>
         <form id="loginForm">
@@ -21,7 +21,7 @@
             name="securityCode"
             required
           />
-          <button type="submit" class="btn">Odeslat</button>
+          <button type="submit" class="btnLogin">Odeslat</button>
         </form>
         <div id="error" class="error-message" style="display: none">
           Zadaný kód je nesprávný. Zkuste to znovu.
@@ -31,5 +31,5 @@
       <script src="script.js"></script>
     </div>
   </body>
-  <footer><h1>Cukrárna Sladké Tajemství</h1></footer>
+  <footer><h3>Cukrárna Sladké Tajemství</h3></footer>
 </html>
