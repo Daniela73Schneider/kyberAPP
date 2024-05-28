@@ -147,12 +147,21 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById(mailName).style.display = 'block';
     event.currentTarget.className += ' active';
   };
-  if (window.location.pathname === '/email.html') {
+
+  // Kontrola a diagnostické výstupy pro cestu
+  const currentPath = window.location.pathname;
+  console.log('Current Path:', currentPath);
+
+  if (window.location.pathname === '/email') {
     // Najdeme ikonu a modální okno
     const treasureIcon = document.getElementById('treasureIcon');
     const treasureMessageModal = document.getElementById(
       'treasureMessageModal',
     );
+
+    // Diagnostický výstup
+    console.log('treasureIcon: ', treasureIcon);
+    console.log('treasureMessageModal: ', treasureMessageModal);
 
     // Přidáme posluchač události pro kliknutí na ikonu
     treasureIcon.addEventListener('click', function () {
