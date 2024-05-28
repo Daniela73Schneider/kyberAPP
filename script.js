@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
   if (loginForm) {
     loginForm.addEventListener('submit', function (event) {
       event.preventDefault();
-      const correctSecurityCode = 'tajnykod123';
+      const correctSecurityCode = 'kobliha';
       if (securityCodeInput.value === correctSecurityCode) {
         window.location.href = 'resetPassword.html';
       } else {
