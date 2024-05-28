@@ -165,16 +165,17 @@
  }
 
  #desktop {
-   background-image: url('img/top-view-glazed-doughnuts-with-assortment-candy-marshmallow.jpg');
-   background-size: cover;
-   background-repeat: no-repeat;
+   background-color: #ffffffae;
    width: 100vw;
    height: 100vh;
    display: flex;
-   flex-wrap: wrap;
-   justify-content: space-around;
    align-items: center;
+   flex-direction: row;
+   justify-content: space-evenly;
+   flex-wrap: wrap;
+   align-content: center;
  }
+
 
  .icon {
    width: 100px;
@@ -188,6 +189,64 @@
    height: 100%;
  }
 
+ /*resetpassword*/
+ .container {
+   max-width: 400px;
+   margin: 5% auto;
+   padding: 20px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+   background-color: #f9f9f9;
+ }
+
+ h1 {
+   font-size: 24px;
+   margin-bottom: 20px;
+ }
+
+ form {
+   display: flex;
+   flex-direction: column;
+ }
+
+ label {
+   margin-bottom: 8px;
+ }
+
+ input[type="password"] {
+   padding: 8px;
+   margin-bottom: 16px;
+   border: 1px solid #ccc;
+   border-radius: 5px;
+ }
+
+ meter {
+   width: 100%;
+   height: 10px;
+   margin-bottom: 16px;
+ }
+
+ #strength-display {
+   margin-bottom: 16px;
+ }
+
+ button[type="submit"] {
+   padding: 10px 20px;
+   background-color: #4caf50;
+   color: #fff;
+   border: none;
+   border-radius: 5px;
+   cursor: pointer;
+ }
+
+ button[type="submit"]:hover {
+   background-color: #0056b3;
+ }
+
+ button[type="submit"]:disabled {
+   background-color: #ccc;
+   cursor: not-allowed;
+ }
 
 
  /* Modal styling */
@@ -213,6 +272,36 @@
    width: 80%;
  }
 
+ .modal-content {
+   background-color: #fefefe;
+   /* Bílé pozadí pro obsah */
+   margin: 15% auto;
+   /* Nastavuje okno do středu vertikálně a horizontálně */
+   padding: 20px;
+   border: 1px solid #888;
+   width: 80%;
+   /* Šířka obsahu */
+   max-width: 600px;
+   /* Maximální šířka obsahu */
+   border-radius: 10px;
+   /* Zaoblené rohy */
+   position: relative;
+ }
+
+ /* Styl pro tlačítko zavření */
+ .close {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   font-size: 24px;
+   cursor: pointer;
+ }
+
+ .close:hover {
+   color: red;
+   /* Barva textu se změní na červenou při najetí myší */
+ }
+
  .close {
    color: #aaa;
    float: right;
@@ -227,11 +316,62 @@
    cursor: pointer;
  }
 
+ /* Styl pro modální okno */
+ .modal {
+   display: none;
+   /* Skryje modální okno */
+   position: fixed;
+   z-index: 1;
+   /* Zajišťuje, že modální okno bude nad všemi ostatními prvky */
+   left: 0;
+   top: 0;
+   width: 100%;
+   height: 100%;
+   overflow: auto;
+   /* Přidá scrollování, pokud je obsah příliš velký */
+   background-color: rgba(0, 0, 0, 0.4);
+   /* Přidá poloprůhledné černé pozadí */
+ }
+
+ /* Styl pro obsah modálního okna */
+ .modal-content {
+   background-color: #fefefe;
+   /* Bílé pozadí pro obsah */
+   margin: 15% auto;
+   /* Nastavuje okno do středu vertikálně a horizontálně */
+   padding: 20px;
+   border: 1px solid #888;
+   width: 80%;
+   /* Šířka obsahu */
+   max-width: 600px;
+   /* Maximální šířka obsahu */
+   border-radius: 10px;
+   /* Zaoblené rohy */
+   position: relative;
+ }
+
+ /* Styl pro tlačítko zavření */
+ .close {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+   font-size: 24px;
+   cursor: pointer;
+ }
+
+ .close:hover {
+   color: red;
+   /* Barva textu se změní na červenou při najetí myší */
+ }
+
  /* Tab styling */
  .tab {
    display: flex;
    background-color: #f1f1f1;
    padding: 10px;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: flex-start;
  }
 
  .tab button {
@@ -251,9 +391,19 @@
    background-color: #ccc;
  }
 
+ h2 {
+   color: #4CAF50;
+   padding-left: 40%;
+ }
+
  /* Email content styling */
  .email {
    display: none;
    padding: 20px;
    border-top: none;
+ }
+
+ #emailIcon {
+   width: 70px;
+   height: 70px;
  }

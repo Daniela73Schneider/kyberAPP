@@ -147,4 +147,24 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById(mailName).style.display = 'block';
     event.currentTarget.className += ' active';
   };
+  if (window.location.pathname === '/email.html') {
+    // Najdeme ikonu a modální okno
+    const treasureIcon = document.getElementById('treasureIcon');
+    const treasureMessageModal = document.getElementById(
+      'treasureMessageModal',
+    );
+
+    // Přidáme posluchač události pro kliknutí na ikonu
+    treasureIcon.addEventListener('click', function () {
+      // Zobrazíme modální okno
+      treasureMessageModal.style.display = 'block';
+    });
+
+    // Najdeme tlačítko zavření a přidáme posluchač události pro zavření modálního okna
+    const closeBtn = document.querySelector('.close');
+    closeBtn.addEventListener('click', function () {
+      // Skryjeme modální okno
+      treasureMessageModal.style.display = 'none';
+    });
+  }
 });
