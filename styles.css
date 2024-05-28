@@ -7,13 +7,18 @@
    src: url('img/font/Ubuntu-Medium.ttf') format('truetype');
  }
 
+ .urlFree {
+   text-decoration: none;
+   color: #d65338;
+ }
+
  /*index.page style*/
  body {
    display: flex;
    align-items: center;
    flex-direction: column;
    width: 80%;
-   height: 100dvh;
+   height: 98dvh;
    margin: 1% 10%;
    background-image: url('img/view-tasty-sweet-glazed-donuts.jpg');
    background-size: cover;
@@ -93,6 +98,9 @@
 
  .imgCR {
    width: 120px;
+   background-color: #ccc;
+   border-radius: 5%;
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  }
 
 
@@ -270,7 +278,9 @@
    padding: 20px;
    border: 1px solid #888;
    width: 80%;
+   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
  }
+
 
  .modal-content {
    background-color: #fefefe;
@@ -393,7 +403,7 @@
 
  h2 {
    color: #4CAF50;
-   padding-left: 40%;
+   padding-left: 45%;
  }
 
  /* Email content styling */
